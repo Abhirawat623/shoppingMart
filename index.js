@@ -1,5 +1,5 @@
 import { products } from "./products.js";
-console.log(products);
+
 //1st --> get elements by id of profucts from html.js
 const productContainer = document.getElementById("products");
 
@@ -42,7 +42,7 @@ cardDetailsContainer.appendChild(brandContainer);
 //6--> card-description
 
 const descriptionContainer = document.createElement("div");
-descriptionContainer.classList("card-description");
+descriptionContainer.classList.add("card-description");
 //**name of product */
 
 const prodName = document.createElement("p");
@@ -63,6 +63,7 @@ prodOldPrice.classList.add("price-strike-through");
 prodOldPrice.innerText= `Rs. ${product.oldPrice}`;
 
 prodPrice.appendChild(prodOldPrice);
+descriptionContainer.appendChild(prodPrice);
 
 //9--> discount
 
@@ -77,19 +78,56 @@ prodOldPrice.appendChild(prodDiscount);
 
 //10--> Rating container
 
-const prodRating =- document.createElement()
+const ratings = document.createElement("p");
+ratings.classList.add("d-flex","align-center");
+
+const rating = document.createElement("span");
+rating.innerText = product.rating;
+
+ratings.appendChild(rating);
+
+const star = document.createElement("span");
+star.classList.add("fa", "fa-star", "fa-x")
+ratings.appendChild(star);
+
+descriptionContainer.appendChild(ratings);
+//for CTA buttn
+const ctaButton = document.createElement("div");
+ctaButton.classList.add("cta-btn");
+
+const cartButton = document.createElement("button");
+cartButton.classList.add(
+    "button",
+    "btn-primary",
+     "btn-icon",
+      "cart-btn",
+       "d-flex",
+        "align-center",
+         "justify-center",
+          "gap",
+          "cursor",
+     "btn-margin"
+);
 
 
+//cart logo
 
+const cartLogo = document.createElement("span");
+cartLogo.classList.add("fa", "fa-shopping-cart");
 
-
-
-
+cartLogo.innerText= "  Add To Card";
+cartButton.appendChild(cartLogo);
+//appending all
+cardContainer.appendChild(imageContainer);
+cardDetailsContainer.appendChild(descriptionContainer);
+cardContainer.appendChild(cardDetailsContainer);
+ctaButton.appendChild(cartButton);
+cardContainer.appendChild(ctaButton);
 
 
 
 //Name the card to products
-    cardContainer.innerText="Products";
+   
     //3rd--> append the  card to product container
     
     productContainer.appendChild(cardContainer);
