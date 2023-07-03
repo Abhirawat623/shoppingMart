@@ -1,7 +1,8 @@
-export const createProductCart =(products, parentContainer)=>{ // basically products inside the productcontainer
-    
 
-    for(let product of products){
+
+export const createProductCart =(products, parentContainer,findProductInCart,pageType)=>{ // basically products inside the productcontainer
+    
+ for(let product of products){
         //2nd--> copy from the html properties bye creating dom
      const cardContainer = document.createElement("div");
      cardContainer.classList.add(
@@ -107,13 +108,16 @@ export const createProductCart =(products, parentContainer)=>{ // basically prod
          "btn-margin"
     );
     cartButton.setAttribute("data-id", product._id)
-    
+    const isProductInCart =findProductInCart(JSON.parse(localStorage.getItem("cart")),product._id);
+    cartButton.innerText = pageType === "cart" ?"Remove" : pageType ==="products" && isProductInCart? "Go To Cart": "Add To Cart";
+    //if page isat cart then show remove and if page is at bproducts and product is selected
     //cart logo
     
     const cartLogo = document.createElement("span");
+   
     cartLogo.classList.add("fa", "fa-shopping-cart");
     
-    cartLogo.innerText= "  Add To Card";
+    
     cartButton.appendChild(cartLogo);
     //appending all
     cardContainer.appendChild(imageContainer);
