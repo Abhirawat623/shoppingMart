@@ -16,19 +16,7 @@ export const products = [
       idealFor: "M",
       rating: 4.2,
     },
-    {
-      _id: "002",
-      name: "Women Crop Top",
-      img: "https://rukminim1.flixcart.com/image/880/1056/krf91u80/top/g/n/v/xs-lbt-13-maroon-london-belly-original-imag57qgzcm3hsmv.jpeg?q=50",
-      alt: "womens top",
-      brand: "Forever 21",
-      newPrice: 750,
-      oldPrice: 1499,
-      discount: 75,
-      size: "M",
-      idealFor: "W",
-      rating: 4.5,
-    },
+    
     {
       _id: "003",
       name: "Women Solid Shirt",

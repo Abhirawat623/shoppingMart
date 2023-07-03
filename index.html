@@ -5,40 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME | SHOPPING MART</title>
     <meta name="autor" description="Abhishek Rawat">
+   
     <link href="styles.css" rel="stylesheet">
-    
+
 </head>
 <body>
-     <div  class=" d-flex wrap gap " id="products"></div>
-    <div class="card card-vertical d-flex direction-column relative shadow">
-        <div class="card-image-container">
-             <img class="card-image" src="https://uilight.netlify.app/assets/shoes.jpg" alt="shoes">
-        </div>
-        <div class="card-details">
-             <div class="card-title">Premium Collection</div>
-             <div class="card-description">
-                  <p class="card-des">Men Sneakers</p>
-                  <p class="card-price">
-                     Rs. 1750
-                        <span class="price-strike-through">Rs. 2499</span>
-                     <span class="discount">(30% OFF)</span>
-                  </p>
-                  <p class = "d-flex align-center">
-                    <span>4.8</span>
-                    <span class="fa fa-star fa-x"></span>
-                  </p>
-             </div>
-             <div class="cta-btn">
-                  <button class="button btn-primary btn-icon cart-btn d-flex align-center justify-center gap cursor btn-margin">
-                   <span class="fa fa-shopping-cart"></span>
-                    Add To Cart</i>
-                  </button>
-             </div>
-        </div>
-   </div>
+    <!-- navbar -->
+    
+     <header class="heading d-flex grow-shrink-basis align-center shadow gap">
+          <div class="heading-title-icon d-flex grow-shrink-basis align-center">
+           
+              <h1 class="heading-title">
+                  <a class="link" href="/">SHOPPING MART APP</a>
+              </h1>
+          </div>
+          <nav class="navigation ">
+              <ul class="list-non-bullet d-flex align-center">
+      
+               <!-- searchbar -->
+            <div class="search-bar relative">
+               <span class="material-icons-outlined absolute top-0 left-0">search</span>
+               <input class="searcher" placeholder="Search here..."></input>
+                 
+          </div>
 
-
-
+          <!-- icons -->
+                  <li class="list-item-inline">
+                 <a href="/" class="link cursor">
+                <span class=" nav-icon material-icons-outlined">favorite_border</span></a>
+                  </li>
+                  <li class="list-item-inline">
+                      <a href="/cart.html" class="link d-flex align-end gap-sm cursor">
+                          <span class=" nav-icon material-icons-outlined">shopping_cart</span></a>
+                  </li>
+              </ul>
+          </nav>
+      </header>
+<!-- products -->
+      <div class="products-page d-flex wrap gap " id="products"></div>
 <script type="module" src="index.js"></script>
 
 </body>

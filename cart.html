@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CART | SHOPPING MART</title>
+    <link href="cart.css" rel="stylesheet">
+    <link href = "styles.css" rel ="stylesheet">
+</head>
+<body>
+    <!-- exact same navbar -->
+   <!-- navbar -->
+    
+   <header class="heading d-flex grow-shrink-basis align-center shadow gap">
+    <div class="heading-title-icon d-flex grow-shrink-basis align-center">
+     
+        <h1 class="heading-title">
+            <a class="link" href="/">SHOPPING MART APP</a>
+        </h1>
+    </div>
+    <nav class="navigation ">
+        <ul class="list-non-bullet d-flex align-center">
+
+         <!-- searchbar -->
+      <div class="search-bar relative">
+         <span class="material-icons-outlined absolute top-0 left-0">search</span>
+         <input class="searcher" placeholder="Search here..."></input>
+           
+    </div>
+
+    <!-- icons -->
+            <li class="list-item-inline">
+           <a href="/" class="link cursor">
+          <span class=" nav-icon material-icons-outlined">favorite_border</span></a>
+            </li>
+            <li class="list-item-inline">
+                <a href="/cart.html" class="link d-flex align-end gap-sm cursor">
+                    <span class=" nav-icon material-icons-outlined">shopping_cart</span></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main">
+    <h2 class="heading-2">Your Cart</h2>
+    <div class="products-page d-flex wrap gap " id="cart"></div>
+    <!-- here products id is given as cart -->
+
+</main>
+
+
+<script  type="module" src="cart.js"></script>
+
+</body>
+</html>

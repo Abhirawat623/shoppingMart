@@ -1,6 +1,21 @@
 import { products } from "./products.js";
+// import { createProductCart } from "./createProductCart.js";
 
+
+let cart = []; //cart to be empty array
 //1st --> get elements by id of profucts from html.js
+
+
+//cart checker duplicacy pordiId will be dataset.id
+
+
+
+const findProuductInCart= (cart,prodId)=>{
+const isProdInCart = cart && cart.length>0 && cart.some(({_id})=> _id === prodId);
+return isProdInCart;
+} //cart should be greater thamn 0 and prod id would be chceked as array id too.
+
+
 const productContainer = document.getElementById("products");
 
 for(let product of products){
@@ -55,12 +70,12 @@ descriptionContainer.appendChild(prodName);
 
 const prodPrice = document.createElement("p");
 prodPrice.classList.add("card-price");
-prodPrice.innerText = `Rs. ${product.newPrice}`;
+prodPrice.innerText = `Rs. ${product.newPrice} `;
 
 //8--> older price for product
 const prodOldPrice = document.createElement("span");
 prodOldPrice.classList.add("price-strike-through");
-prodOldPrice.innerText= `Rs. ${product.oldPrice}`;
+prodOldPrice.innerText= `Rs. ${product.oldPrice} `;
 
 prodPrice.appendChild(prodOldPrice);
 descriptionContainer.appendChild(prodPrice);
@@ -70,9 +85,9 @@ descriptionContainer.appendChild(prodPrice);
 
 const prodDiscount = document.createElement("span");
 prodDiscount.classList.add("discount");
-prodDiscount.innerText= `(${product.discount}% OFF)`;
+prodDiscount.innerText= ` (${product.discount}% OFF)`;
 
-prodOldPrice.appendChild(prodDiscount);
+prodPrice.appendChild(prodDiscount);
 
 
 
@@ -108,7 +123,7 @@ cartButton.classList.add(
           "cursor",
      "btn-margin"
 );
-
+cartButton.setAttribute("data-id", product._id)
 
 //cart logo
 
@@ -122,7 +137,7 @@ cardContainer.appendChild(imageContainer);
 cardDetailsContainer.appendChild(descriptionContainer);
 cardContainer.appendChild(cardDetailsContainer);
 ctaButton.appendChild(cartButton);
-cardContainer.appendChild(ctaButton);
+cardDetailsContainer.appendChild(ctaButton);
 
 
 
@@ -134,3 +149,42 @@ cardContainer.appendChild(ctaButton);
     
 }
 
+
+
+//event for adding product to cart also..bubbling takes place
+
+
+
+productContainer.addEventListener("click",(event)=>{
+//main logic for duplicacy cart
+const isProdInCart = findProuductInCart(cart, event.target.dataset.id);
+
+if(!isProdInCart){
+    const productsAddToCart = products.filter(({_id})=> _id === event.target.dataset.id);
+    cart = [...cart,...productsAddToCart];
+//    console.log(cart);
+//putting the cart in the local storage;
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+
+
+
+    const cartButton = event.target;
+    cartButton.innerHTML = "GO TO CART <span class='material-icons-outlined'>shopping_cart</span>"
+    //to change add to cart into go to card
+}
+else{
+    location.href="cart.html"; // for cart page
+}
+
+
+
+
+    // console.log(event.target)
+    // const productsAddToCart = products.filter(({_id})=> _id ===event.target.dataset.id);
+    // cart = [...cart,...productsAddToCart];
+    // console.log(cart) << this should be in abobe if statement
+});
+
+createProductCart(products,productContainer);//for index .js

@@ -1,18 +1,58 @@
-@import url("https://uilight.netlify.app/main.css");
 
+@import url("https://uilight.netlify.app/main.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+:root{
+
+    --primary-color:#233876;
+}
+
+
+
+
+
+
+.nav-icon{
+    font-size:2rem;
+}
+/* for navbar heading and the icons insie it */
+.heading{
+    background-color: var(--background-color);
+ padding: 2rem 3rem;
+ color: var(--primary-color);
+ border-bottom: 1px solid var(--accent-color);
+}
+ 
 .card-vertical{
     width: 16rem;
 }
 
 .card-image-container{
     width: 100%;
-    height: 240px;
+    height: 260px;
+    
 }
 .card-image{
-
-object-fit:cover;
+height: 100%;
+object-fit:contain;
 }
 
 .card-price{
-    gap: 5px;
+    gap: 4px;
+}
+/* for products listing */
+.products-page{
+    z-index:1;
+    padding:4rem 3rem 5rem 4rem;
+}
+/* for search bar */
+.searcher{
+    width:18rem;
+    padding-left:2rem; 
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--primary-color);
+
 }
