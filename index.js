@@ -160,6 +160,7 @@ const productContainer = document.getElementById("products");
 
 productContainer.addEventListener("click",(event)=>{
 //main logic for duplicacy cart
+
 const isProdInCart = findProuductInCart(cart, event.target.dataset.id);
 
 if(!isProdInCart){
