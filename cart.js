@@ -1,4 +1,5 @@
 import { createProductCart } from "./createProductCart.js";
+import { createHorizontalCart } from "./createHorizontalCart.js";
 import { findProuductInCart } from "./findProductInCart.js";
  
 //just as first dom cart .html cart 
@@ -23,3 +24,4 @@ localStorage.setItem("cart" , JSON.stringify(cart));
 });
 
 createProductCart(cart, cartContainer, findProuductInCart, "cart");
+createHorizontalCart(cart,cartContainer);
