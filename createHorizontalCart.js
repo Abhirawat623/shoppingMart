@@ -23,10 +23,10 @@ image.setAttribute("alt",product.name);
 cardImageContainer.appendChild(image);
 
 //card details container
-
-
     const cardDetailsContainer = document.createElement("div");
-    cardDetailsContainer.classList.add("card-details","d-flex","direction-column");
+    cardDetailsContainer.classList.add("card-details",
+    "d-flex",
+    "direction-column");
     //** */
     const brandContainer = document.createElement("div");
     brandContainer.classList.add("card-title");
@@ -54,7 +54,8 @@ cardImageContainer.appendChild(image);
     
     //8--> older price for product
     const prodOldPrice = document.createElement("span");
-    prodOldPrice.classList.add("price-strike-through","padding-all-8");
+    prodOldPrice.classList.add("price-strike-through",
+    "padding-all-8");
     prodOldPrice.innerText= `Rs. ${product.oldPrice} `;
     
     prodPrice.appendChild(prodOldPrice);
@@ -64,7 +65,7 @@ cardImageContainer.appendChild(image);
     
     
     const prodDiscount = document.createElement("span");
-    prodDiscount.classList.add("discount padding-all-8");
+    prodDiscount.classList.add("discount", "padding-all-8");
     prodDiscount.innerText= ` (${product.discount}% OFF)`;
     
     prodPrice.appendChild(prodDiscount);
@@ -72,7 +73,7 @@ cardImageContainer.appendChild(image);
     //quantity container
 
     const quantityContainer = document.createElement("div");
-    quantityContainer.classList.add("quantity-container d-flex gap");
+    quantityContainer.classList.add("quantity-container","d-flex", "gap");
      const pTitle = document.createElement("p");
      pTitle.classList.add("q-title");
      pTitle.innerText="Quantity: "
@@ -81,7 +82,7 @@ cardImageContainer.appendChild(image);
      
 
      const countContainer = document.createElement("div");
-     countContainer.classList("count-container", "d-flex", "align-center","gap");
+     countContainer.classList.add("count-container", "d-flex", "align-center","gap");
      const countButton = document.createElement("button");
      countButton.classList.add("count");
      countButton.innerText="-";
@@ -95,37 +96,60 @@ cardImageContainer.appendChild(image);
     countButton2.innerText="+"
 
      quantityContainer.appendChild(countContainer);
-     countContainer.appendChild(countButton);
      countContainer.appendChild(countValue);
+     countContainer.appendChild(countButton);
      countContainer.appendChild(countButton2);
 
 
      //cta buttons
      const ctaButtonContainer = document.createElement("div");
-     ctaButtonContainer.classList.add("cta-btn d-flex gap");
+     ctaButtonContainer.classList.add("cta-btn", "d-flex", "gap");
 
      const ctaButton = document.createElement("div");
      ctaButton.classList.add("cta-btn");
      
      ctaButtonContainer.appendChild(ctaButton);
-     ctaButton.appendChild(addToCartButton);
 
-     addToCartButton = document.createElement("div");
-     addToCartButton.classList.add("button","hori-btn", "btn-primary", "btn-icon", "d-flex", "align-center",
-     "justify-center", "gap","cursor", "btn-margin");
+     const addToCartButton = document.createElement("button");
+     addToCartButton.classList.add("button",
+     "hori-btn",
+      "btn-primary",
+      "btn-icon",
+       "d-flex",
+        "align-center",
+     "justify-center",
+      "gap",
+      "cursor",
+       "btn-margin");
     
     const cartLogo = document.createElement("div");
+     
    
     cartLogo.classList.add("fa", "fa-shopping-cart");
     addToCartButton.innerText="Add To Cart";
 
     addToCartButton.appendChild(cartLogo);
+  ctaButton.appendChild(addToCartButton);
     
-    const ctaButton2 = document.createElement("div");
-    ctaButton2.classList.add("button", "hori-btn", "btn-outline-primary", "btn-icon", "d-flex", "align-center","justify-center", "gap", "cursor", "btn-margin");
-    ctaButton2.innerText="Move to ❤️";
+    const ctabuttonAnother = document.createElement("div");
+    ctabuttonAnother.classList.add("cta-btn");
 
-    ctaButtonContainer.appendChild(ctaButton2);
+    const ctaButton2 = document.createElement("button");
+    ctaButton2.classList.add("button",
+     "hori-btn",
+      "btn-outline-primary", 
+    "btn-icon",
+     "d-flex",
+      "align-center",
+      "justify-center",
+     "gap",
+      "cursor",
+       "btn-margin");
+    ctaButton2.innerText="Move to ❤️";
+    ctabuttonAnother.appendChild(ctaButton2);
+    ctaButtonContainer.appendChild(ctabuttonAnother);
+
+    cardContainer.appendChild(ctaButtonContainer)
     cardContainer.appendChild(cardImageContainer);
     cardContainer.appendChild(cardDetailsContainer);
     cardContainer.appendChild(ctaButtonContainer);
