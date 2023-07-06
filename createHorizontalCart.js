@@ -1,161 +1,145 @@
 
 
+
 export const createHorizontalCart = (products, parentContainer)=>{
 
 for(let product of products){
 
     //cart
+   
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-horizontal",
 "d-flex",
  "shadow");
-
+ 
 //image container
 const cardImageContainer = document.createElement("div");
 cardImageContainer.classList.add("card-hori-image-container", "relative");
+cardContainer.appendChild(cardImageContainer);
 
 //image
 const image = document.createElement("img");
 image.classList.add("card-image")
-image.setAttribute("src", product.image);
+image.setAttribute("src", product.img);
 image.setAttribute("alt",product.name);
 
 cardImageContainer.appendChild(image);
 
-//card details container
-    const cardDetailsContainer = document.createElement("div");
-    cardDetailsContainer.classList.add("card-details",
-    "d-flex",
-    "direction-column");
-    //** */
-    const brandContainer = document.createElement("div");
-    brandContainer.classList.add("card-title");
-    brandContainer.innerText= product.brand;
-    
-    cardDetailsContainer.appendChild(brandContainer);
-   
-    //6--> card-description
-    
-    const descriptionContainer = document.createElement("div");
-    descriptionContainer.classList.add("card-description");
-    //**name of product */
-    
-    const prodName = document.createElement("p");
-    prodName.classList.add("card-des");
-    prodName.innerText=product.name;
-    cardDetailsContainer.appendChild(descriptionContainer);
-    descriptionContainer.appendChild(prodName);
-    
-    //7-->Newer price for product
-    
-    const prodPrice = document.createElement("p");
-    prodPrice.classList.add("card-price");
-    prodPrice.innerText = `Rs. ${product.newPrice} `;
-    
-    //8--> older price for product
-    const prodOldPrice = document.createElement("span");
-    prodOldPrice.classList.add("price-strike-through",
-    "padding-all-8");
-    prodOldPrice.innerText= `Rs. ${product.oldPrice} `;
-    
-    prodPrice.appendChild(prodOldPrice);
-    descriptionContainer.appendChild(prodPrice);
-    
-    //9--> discount
-    
-    
-    const prodDiscount = document.createElement("span");
-    prodDiscount.classList.add("discount", "padding-all-8");
-    prodDiscount.innerText= ` (${product.discount}% OFF)`;
-    
-    prodPrice.appendChild(prodDiscount);
+//card-details
+const cardDetailsContainer =document.createElement("div");
+cardDetailsContainer.classList.add("card-details","d-flex","direction-column");
 
-    //quantity container
+cardContainer.appendChild(cardDetailsContainer);
 
-    const quantityContainer = document.createElement("div");
-    quantityContainer.classList.add("quantity-container","d-flex", "gap");
-     const pTitle = document.createElement("p");
-     pTitle.classList.add("q-title");
-     pTitle.innerText="Quantity: "
+const cardTitle = document.createElement("div");
+cardTitle.classList.add("card-title");
+cardTitle.innerText= product.brand;
+cardDetailsContainer.appendChild(cardTitle);
 
-     quantityContainer.appendChild(pTitle);
-     
+const cardDescription = document.createElement("div");
+cardDescription.classList.add("card-description");
+cardDetailsContainer.appendChild(cardDescription);
 
-     const countContainer = document.createElement("div");
-     countContainer.classList.add("count-container", "d-flex", "align-center","gap");
-     const countButton = document.createElement("button");
-     countButton.classList.add("count");
-     countButton.innerText="-";
+const cardDes =document.createElement("div");
+cardDes.classList.add("card-des");
+cardDes.innerText =product.name;
 
-     const countValue = document.createElement("span");
-     countValue.classList.add("count-value");
-     countValue.innerText ="1";
+cardDescription.appendChild(cardDes);
 
-    const countButton2 = document.createElement("button");
-    countButton2.classList.add("count");
-    countButton2.innerText="+"
+const productPrice = document.createElement("div");
+productPrice.classList.add("card-price");
+productPrice.innerText= `Rs .${product.newPrice}`;
+cardDetailsContainer.appendChild(productPrice);
 
-     quantityContainer.appendChild(countContainer);
-     countContainer.appendChild(countValue);
-     countContainer.appendChild(countButton);
-     countContainer.appendChild(countButton2);
+const priceStrikeOfOldPrice = document.createElement("span");
+priceStrikeOfOldPrice.classList.add("price-strike-through", "padding-all-8");
+priceStrikeOfOldPrice.innerText=`Rs. ${product.oldPrice}`;
+
+productPrice.appendChild(priceStrikeOfOldPrice);
+
+const productDiscount = document.createElement("span");
+productDiscount.classList.add("discount","padding-all-8");
+productDiscount.innerText=`(${product.discount}% OFF)`;
+
+productPrice.appendChild(productDiscount);
+
+const quantityContainer = document.createElement("div");
+quantityContainer.classList.add("quantity-container","d-flex","gap");
+cardDetailsContainer.appendChild(quantityContainer);
 
 
-     //cta buttons
-     const ctaButtonContainer = document.createElement("div");
-     ctaButtonContainer.classList.add("cta-btn", "d-flex", "gap");
+const qTitle = document.createElement("p");
+qTitle.classList.add("q-title");
+qTitle.innerText="Quantity: "
 
-     const ctaButton = document.createElement("div");
-     ctaButton.classList.add("cta-btn");
-     
-     ctaButtonContainer.appendChild(ctaButton);
+quantityContainer.appendChild(qTitle);
 
-     const addToCartButton = document.createElement("button");
-     addToCartButton.classList.add("button",
-     "hori-btn",
-      "btn-primary",
-      "btn-icon",
-       "d-flex",
-        "align-center",
-     "justify-center",
-      "gap",
-      "cursor",
-       "btn-margin");
-    
-    const cartLogo = document.createElement("div");
-     
-   
-    cartLogo.classList.add("fa", "fa-shopping-cart");
-    addToCartButton.innerText="Add To Cart";
+const countContainer = document.createElement("div");
+countContainer.classList.add("count-container","d-flex","align-center","gap");
 
-    addToCartButton.appendChild(cartLogo);
-  ctaButton.appendChild(addToCartButton);
-    
-    const ctabuttonAnother = document.createElement("div");
-    ctabuttonAnother.classList.add("cta-btn");
+quantityContainer.appendChild(countContainer);
 
-    const ctaButton2 = document.createElement("button");
-    ctaButton2.classList.add("button",
-     "hori-btn",
-      "btn-outline-primary", 
-    "btn-icon",
-     "d-flex",
-      "align-center",
-      "justify-center",
-     "gap",
-      "cursor",
-       "btn-margin");
-    ctaButton2.innerText="Move to ❤️";
-    ctabuttonAnother.appendChild(ctaButton2);
-    ctaButtonContainer.appendChild(ctabuttonAnother);
+const plusButton = document.createElement("button");
+plusButton.classList.add("count");
+plusButton.innerText="-";
 
-    cardContainer.appendChild(ctaButtonContainer)
-    cardContainer.appendChild(cardImageContainer);
-    cardContainer.appendChild(cardDetailsContainer);
-    cardContainer.appendChild(ctaButtonContainer);
-  
-    cardContainer.appendChild(quantityContainer);
-   
-   parentContainer.appendChild(cardContainer);
+countContainer.appendChild(plusButton);
+
+
+const countValue = document.createElement("span");
+countValue.classList.add("count-value");
+countValue.innerText="1";
+
+countContainer.appendChild(countValue);
+
+const minusButton = document.createElement("button");
+minusButton.classList.add("count");
+minusButton.innerText="+";
+
+countContainer.appendChild(minusButton);
+
+const ctaButtonContainer = document.createElement("div");
+ctaButtonContainer.classList.add("cta-btn","d-flex","gap");
+
+cardDetailsContainer.appendChild(ctaButtonContainer);
+
+const ctaButton1= document.createElement("div");
+ctaButton1.classList.add("cta-btn");
+
+ctaButtonContainer.appendChild(ctaButton1);
+
+
+const removeFromCart = document.createElement("button");
+removeFromCart.classList.add("button",
+"hori-btn",
+"btn-primary","btn-icon",
+"d-flex", "align-center",
+"justify-center", "gap",
+"cursor", "btn-margin");
+removeFromCart.setAttribute("data-id", product._id);
+
+const logo= document.createElement("span");
+logo.classList.add("fa","fa-Remove")
+removeFromCart.innerText="Remove"
+removeFromCart.appendChild(logo);
+
+
+ctaButton1.appendChild(removeFromCart);
+
+
+const ctaButton2 = document.createElement("div");
+ctaButton2.classList.add("cta-btn");
+ctaButtonContainer.appendChild(ctaButton2);
+
+
+const moveTocartButton = document.createElement("button");
+moveTocartButton.classList.add("button", "hori-btn",
+ "btn-outline-primary", "btn-icon", "d-flex" ,"align-center", "justify-center",
+"gap", "cursor", "btn-margin");
+moveTocartButton.innerText="Save To Wishlist ❤️";
+moveTocartButton.setAttribute("data-id", product._id);
+
+ctaButton2.appendChild(moveTocartButton);
+parentContainer.appendChild(cardContainer);
 }
 }

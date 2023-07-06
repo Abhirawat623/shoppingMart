@@ -5,11 +5,10 @@
 
 :root{
 
-    --primary-color:#233876;
+    --primary-color:black;
+    --background-color:white;
+    --accent-color:#ede9fe;
 }
-
-
-
 
 
 
@@ -26,6 +25,8 @@
  
 .card-vertical{
     width: 16rem;
+    
+    
 }
 
 .card-image-container{
@@ -44,7 +45,18 @@ object-fit:contain;
 /* for products listing */
 .products-page{
     z-index:1;
-    padding:4rem 3rem 5rem 4rem;
+    
+    
+}
+.card{
+    display: grid;
+    justify-content: space-between;
+    height: 500px;
+    width: 300px;
+    top:20px;
+    left: 80px;
+    align-items: center;
+    margin: 2rem;
 }
 /* for search bar */
 .searcher{
@@ -57,3 +69,29 @@ object-fit:contain;
 
 }
 
+/* .card-horizontal{
+    margin: 5rem;
+} */
+
+.main2{
+ position: absolute;
+    right: 15rem;
+    top:17.5rem;
+}
+.final-price{
+background-color: var(--accent-color);
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin:5rem;
+}
+
+.heading-2{
+    margin-bottom: 2rem ;
+}

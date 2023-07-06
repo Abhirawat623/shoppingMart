@@ -108,6 +108,7 @@ export const createProductCart =(products, parentContainer,findProductInCart,pag
          "btn-margin"
     );
     cartButton.setAttribute("data-id", product._id)
+
     const isProductInCart =findProductInCart(JSON.parse(localStorage.getItem("cart")),product._id);
     cartButton.innerText = pageType === "cart" ?"Remove" : pageType ==="products" && isProductInCart? "Go To Cart": "Add To Cart";
     //if page isat cart then show remove and if page is at bproducts and product is selected
