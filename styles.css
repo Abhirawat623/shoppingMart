@@ -75,14 +75,13 @@ object-fit:contain;
 
 .main2{
  position: absolute;
-    right: 15rem;
+    right: 10rem;
     top:17.5rem;
 }
 .final-price{
 background-color: var(--accent-color);
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
+width: 25rem;
+
 }
 
 .main{
@@ -94,4 +93,8 @@ justify-content: space-evenly;
 
 .heading-2{
     margin-bottom: 2rem ;
+}
+
+.justify-space-between{
+    justify-content: space-between;
 }
