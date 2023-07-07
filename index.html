@@ -21,7 +21,6 @@
           </div>
           <nav class="navigation ">
               <ul class="list-non-bullet d-flex align-center">
-      
                <!-- searchbar -->
             <div class="search-bar relative">
                <span class="material-icons-outlined absolute top-0 left-0">search</span>
@@ -40,9 +39,48 @@
                   </li>
               </ul>
           </nav>
-      </header>
+      </header> 
 <!-- products -->
+
+<div class="d-flex">
+<aside class="side-bar">
+<h3 class="heading-3">Filter</h3>
+<div class="filter-container">
+<h3 class="heading-4">Ratings</h3>
+<div class="d-flex align-center gap ">
+    <input  data-rating="4" id="rating-4" class="filter-radio" type="radio" name="rating">
+    <label  data-rating="4" for="rating-4" class="filter-label">4 stars & above</label>
+</div>
+
+
+<div class="d-flex align-center gap ">
+    <input  data-rating="3" id="rating-3" class="filter-radio" type="radio" name="rating">
+    <label  data-rating="3" for="rating-3" class="filter-label">3 stars & above</label>
+</div>
+
+
+<div class="d-flex align-center gap ">
+    <input  data-rating="2" id="rating-2" class="filter-radio" type="radio" name="rating">
+    <label  data-rating="2" for="rating-2" class="filter-label">2 stars & above</label>
+</div>
+
+
+
+<div class="d-flex align-center gap ">
+    <input  data-rating="1" id="rating-1" class="filter-radio" type="radio" name="rating">
+    <label  data-rating="1" for="rating-1" class="filter-label">1 stars & above</label>
+</div>
+
+
+</div>
+</aside>
+
+
+
+</div>
       <div class="products-page d-flex wrap gap " id="products"></div>
+
+
 <script type="module" src="index.js"></script>
 
 </body>

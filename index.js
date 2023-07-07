@@ -21,7 +21,7 @@ let isProdInCart;
 
 const productContainer = document.getElementById("products");
 
-
+const filterContainer =document.querySelector(".side-bar")
 
 productContainer.addEventListener("click",(event)=>{
 //main logic for duplicacy cart
@@ -53,6 +53,16 @@ else{
     // const productsAddToCart = products.filter(({_id})=> _id ===event.target.dataset.id);
     // cart = [...cart,...productsAddToCart];
     // console.log(cart) << this should be in abobe if statement
+});
+
+filterContainer.addEventListener("click",(event)=>{
+const updatedProducts = products.filter(({rating}) =>  rating>=Number(event.target.dataset.rating));//here the filter checking clicked radio for dataset rating
+
+productContainer.innerHTML="";//after filtered out we have to make the other products empty
+
+createProductCart(updatedProducts,productContainer, findProuductInCart,"products");//putting these function creates products here just by adding updatedproducts, we put filtered here 
+
+
 });
 
 createProductCart(products,productContainer, findProuductInCart,"products");//for index .js
