@@ -55,6 +55,7 @@ else{
     // console.log(cart) << this should be in abobe if statement
 });
 
+//for filter
 filterContainer.addEventListener("click",(event)=>{
 const updatedProducts = products.filter(({rating}) =>  rating>=Number(event.target.dataset.rating));//here the filter checking clicked radio for dataset rating
 
@@ -66,3 +67,17 @@ createProductCart(updatedProducts,productContainer, findProuductInCart,"products
 });
 
 createProductCart(products,productContainer, findProuductInCart,"products");//for index .js
+
+
+
+const searchedProduct= document.querySelector(".searcher");
+searchedProduct.addEventListener("input",(event)=>{
+
+const searchedNewProduct = products.filter(({name})=> name.toLowerCase().startsWith(event.target.value.toLowerCase()));
+
+
+productContainer.innerHTML="";
+
+
+createProductCart(searchedNewProduct,productContainer, findProuductInCart,"products");//putting these searching function creates products here just by adding updatedproducts, we put filtered here 
+});

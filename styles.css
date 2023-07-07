@@ -134,3 +134,25 @@ width: 25rem;
 .filter-label{
     font-size: 1.3rem;
 }
+
+.my-icons{
+    font-size: 2rem;
+    color: blue;
+}
+.my-icons1{
+color: black;
+font-size: 2rem;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#my-icons{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+}
