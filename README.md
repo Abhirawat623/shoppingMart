@@ -6,7 +6,7 @@ The project made as a replica of e-commerce website, includes major sections lik
  Vanila JS
 
  ## live link
- https://shopkaroapp.netlify.app/
+ https://shopping-mart-kappa.vercel.app/
 
  ## Screenshots
 ![Home _ Shopping Mart and 7 more pages - Personal - Microsoft​ Edge 31-07-2023 12_33_42](https://github.com/Abhirawat623/shoppingMart/assets/131130116/8af8590c-0842-426c-911a-73ff950a80eb)
