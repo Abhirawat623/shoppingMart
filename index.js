@@ -40,7 +40,9 @@ localStorage.setItem("cart",JSON.stringify(cart));
 
     const cartButton = event.target;
     cartButton.innerHTML = "Go To Cart<span class='material-icons-outlined'>shopping_cart</span>"
+   
     //to change add to cart into go to card
+    
 }
 else{
     location.href="cart.html"; // for cart page
